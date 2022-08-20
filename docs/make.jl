@@ -1,7 +1,9 @@
 using ArviZExampleData
 using Documenter
 
-DocMeta.setdocmeta!(ArviZExampleData, :DocTestSetup, :(using ArviZExampleData); recursive=true)
+DocMeta.setdocmeta!(
+    ArviZExampleData, :DocTestSetup, :(using ArviZExampleData); recursive=true
+)
 
 makedocs(;
     modules=[ArviZExampleData],
@@ -14,12 +16,7 @@ makedocs(;
         edit_link="main",
         assets=String[],
     ),
-    pages=[
-        "Home" => "index.md",
-    ],
+    pages=["Home" => "index.md"],
 )
 
-deploydocs(;
-    repo="github.com/arviz-devs/ArviZExampleData.jl",
-    devbranch="main",
-)
+deploydocs(; repo="github.com/arviz-devs/ArviZExampleData.jl", devbranch="main")
