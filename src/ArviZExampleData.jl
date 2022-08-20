@@ -7,7 +7,7 @@ using NCDatasets: NCDatasets
 using OrderedCollections: OrderedDict
 using StructTypes: StructTypes
 
-export load_example_data
+export list_example_data, load_example_data
 
 const DEPS_DATA_DIR = joinpath(pkgdir(ArviZExampleData), "deps", "data")
 const EXAMPLE_DATA_DIR = joinpath(DEPS_DATA_DIR, "example_data")
@@ -27,6 +27,7 @@ const REMOTE_EXAMPLE_DATA = OrderedDict(
 
 include("register.jl")
 include("load.jl")
+include("list.jl")
 
 function __init__()
     return register_all_data()
