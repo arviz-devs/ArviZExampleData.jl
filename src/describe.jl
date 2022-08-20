@@ -1,9 +1,9 @@
 """
-    list_example_data() -> String
+    describe_example_data() -> String
 
 Return a string containing descriptions of all available datasets.
 """
-function list_example_data()
+function describe_example_data()
     data = load_example_data()
     descriptions = map(values(data)) do metadata
         return sprint(show, "text/plain", metadata)

@@ -27,7 +27,7 @@ const REMOTE_EXAMPLE_DATA = OrderedDict(
 
 include("register.jl")
 include("load.jl")
-include("list.jl")
+include("describe.jl")
 
 function __init__()
     return register_all_data()
