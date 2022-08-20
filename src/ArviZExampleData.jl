@@ -4,6 +4,7 @@ using DataDeps: DataDeps
 using InferenceObjects: InferenceObjects
 using JSON3: JSON3
 using NCDatasets: NCDatasets
+using OrderedCollections: OrderedDict
 using StructTypes: StructTypes
 
 export load_example_data
@@ -17,10 +18,10 @@ const DATA_HTTP_PROTOCOL = "https"
 
 include("metadata.jl")
 
-const LOCAL_EXAMPLE_DATA = Dict(
+const LOCAL_EXAMPLE_DATA = OrderedDict(
     md.name => md for md in JSON3.read(read(LOCAL_DATA_FILE), Vector{LocalFileMetadata})
 )
-const REMOTE_EXAMPLE_DATA = Dict(
+const REMOTE_EXAMPLE_DATA = OrderedDict(
     md.name => md for md in JSON3.read(read(REMOTE_DATA_FILE), Vector{RemoteFileMetadata})
 )
 
