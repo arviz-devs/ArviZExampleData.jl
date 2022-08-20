@@ -17,3 +17,11 @@ Documentation for [ArviZExampleData](https://github.com/arviz-devs/ArviZExampleD
 ```@autodocs
 Modules = [ArviZExampleData]
 ```
+
+## Datasets
+
+```@example
+using ArviZExampleData
+
+println(list_example_data())
+```
