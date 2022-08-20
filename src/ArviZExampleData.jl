@@ -22,4 +22,10 @@ const REMOTE_EXAMPLE_DATA = Dict(
     md.name => md for md in JSON3.read(read(REMOTE_DATA_FILE), Vector{RemoteFileMetadata})
 )
 
+include("register.jl")
+
+function __init__()
+    return register_all_data()
+end
+
 end
