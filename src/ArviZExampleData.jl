@@ -1,5 +1,6 @@
 module ArviZExampleData
 
-# Write your package code here.
+using InferenceObjects: InferenceObjects
+using NCDatasets: NCDatasets
 
 end
