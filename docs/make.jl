@@ -16,7 +16,12 @@ makedocs(;
         edit_link="main",
         assets=String[],
     ),
-    pages=["Home" => "index.md"],
+    pages=[
+        "Home" => "index.md",
+        "Datasets" => "datasets.md",
+        "API" => "api.md",
+        "For developers" => "for_developers.md",
+    ],
 )
 
 deploydocs(; repo="github.com/arviz-devs/ArviZExampleData.jl", devbranch="main")

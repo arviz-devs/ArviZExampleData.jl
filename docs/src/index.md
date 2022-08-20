@@ -11,17 +11,3 @@ CurrentModule = ArviZExampleData
 
 Utilities for loading data include in the [`arviz_example_data`](https://github.com/arviz-devs/arviz_example_data) repository.
 The resulting objects are [InferenceObjects.jl](https://github.com/arviz-devs/InferenceObjects.jl)'s `InferenceData`, and these utilities are used in [ArviZ.jl](https://github.com/arviz-devs/ArviZ.jl).
-
-Documentation for [ArviZExampleData](https://github.com/arviz-devs/ArviZExampleData.jl).
-
-```@autodocs
-Modules = [ArviZExampleData]
-```
-
-## Datasets
-
-```@example
-using ArviZExampleData
-
-println(list_example_data())
-```
