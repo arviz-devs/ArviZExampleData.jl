@@ -15,4 +15,11 @@ const DATA_HTTP_PROTOCOL = "https"
 
 include("metadata.jl")
 
+const LOCAL_EXAMPLE_DATA = Dict(
+    md.name => md for md in JSON3.read(read(LOCAL_DATA_FILE), Vector{LocalFileMetadata})
+)
+const REMOTE_EXAMPLE_DATA = Dict(
+    md.name => md for md in JSON3.read(read(REMOTE_DATA_FILE), Vector{RemoteFileMetadata})
+)
+
 end
