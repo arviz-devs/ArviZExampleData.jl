@@ -6,6 +6,8 @@ using JSON3: JSON3
 using NCDatasets: NCDatasets
 using StructTypes: StructTypes
 
+export load_example_data
+
 const DEPS_DATA_DIR = joinpath(pkgdir(ArviZExampleData), "deps", "data")
 const EXAMPLE_DATA_DIR = joinpath(DEPS_DATA_DIR, "example_data")
 const LOCAL_DATA_DIR = joinpath(EXAMPLE_DATA_DIR, "data")
@@ -23,6 +25,7 @@ const REMOTE_EXAMPLE_DATA = Dict(
 )
 
 include("register.jl")
+include("load.jl")
 
 function __init__()
     return register_all_data()
