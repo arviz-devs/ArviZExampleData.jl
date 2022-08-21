@@ -16,7 +16,7 @@ using Test
             "rugby",
         ]
         datasets = load_example_data()
-        @test datasets isa Dict{String,ArviZExampleData.AbstractFileMetadata}
+        @test datasets isa AbstractDict{String,ArviZExampleData.AbstractFileMetadata}
         @test issubset(keys(datasets), names)
         for name in keys(datasets)
             idata = load_example_data(name)
