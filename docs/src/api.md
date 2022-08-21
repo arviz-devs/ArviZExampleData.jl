@@ -2,4 +2,5 @@
 
 ```@autodocs
 Modules = [ArviZExampleData]
+Private = false
 ```

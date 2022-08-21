@@ -7,7 +7,7 @@ using NCDatasets: NCDatasets
 using OrderedCollections: OrderedDict
 using StructTypes: StructTypes
 
-export list_example_data, load_example_data
+export describe_example_data, load_example_data
 
 const DEPS_DATA_DIR = joinpath(pkgdir(ArviZExampleData), "deps", "data")
 const EXAMPLE_DATA_DIR = joinpath(DEPS_DATA_DIR, "example_data")
