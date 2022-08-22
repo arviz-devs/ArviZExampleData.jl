@@ -1,9 +1,8 @@
 module ArviZExampleData
 
 using DataDeps: DataDeps
-using InferenceObjects: InferenceObjects
+using InferenceObjectsNetCDF: InferenceObjectsNetCDF
 using JSON3: JSON3
-using NCDatasets: NCDatasets
 using OrderedCollections: OrderedDict
 using StructTypes: StructTypes
 

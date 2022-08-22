@@ -53,6 +53,6 @@ function load_example_data(name::AbstractString; kwargs...)
             ),
         )
     end
-    return InferenceObjects.from_netcdf(path; kwargs...)
+    return InferenceObjectsNetCDF.from_netcdf(path; kwargs...)
 end
 load_example_data() = merge(LOCAL_EXAMPLE_DATA, REMOTE_EXAMPLE_DATA)
