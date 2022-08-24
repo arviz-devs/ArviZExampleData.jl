@@ -12,6 +12,7 @@ StructTypes = "856f2bd8-1eba-4b0a-8007-ebc267875bd4"
 
 [compat]
 DataDeps = "0.7"
+InferenceObjects = "0.1"
 InferenceObjectsNetCDF = "0.1"
 JSON3 = "1"
 OrderedCollections = "1"
@@ -19,7 +20,8 @@ StructTypes = "1"
 julia = "1.6"
 
 [extras]
+InferenceObjects = "b5cf5a8d-e756-4ee3-b014-01d49d192c00"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["Test"]
+test = ["InferenceObjects", "Test"]
