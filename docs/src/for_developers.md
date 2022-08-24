@@ -1,17 +1,15 @@
 # For developers
 
-This package has [`arviz_example_data`](https://github.com/arviz-devs/arviz_example_data) as a data dependency, which is included using [`git subtree`](https://www.atlassian.com/git/tutorials/git-subtree):
+This package has [`arviz_example_data`](https://github.com/arviz-devs/arviz_example_data) as a data dependency, which is included as an [artifact](https://pkgdocs.julialang.org/v1/artifacts/).
 
-```bash
-$ git subtree add --prefix deps/data/example_data https://github.com/arviz-devs/arviz_example_data.git main --squash
+When `arviz_example_data` is updated, and a new release is made, `Artifacts.toml` should be updated to point to the new tarball corresponding to the release:
+
+```julia
+julia> using ArtifactUtils
+
+julia> version = v"0.1.0";
+
+julia> tarball_url = "https://github.com/arviz-devs/arviz_example_data/archive/refs/tags/v$version.tar.gz";
+
+julia> add_artifact!("Artifacts.toml", "arviz_example_data", tarball_url; force=true);
 ```
-
-When `arviz_example_data` is updated, a `git subtree` pull must be run within this repo to keep the data dependency up-to-date:
-
-```bash
-$ git subtree pull --prefix deps/data/example_data https://github.com/arviz-devs/arviz_example_data.git main --squash
-```
-
-!!! info "Why git subtree instead of git submodule?"
-    `git submodule` avoids copying the data from one repo into another, but it is incompatible with Julia's package registration.
-    See [this comment](https://github.com/JuliaLang/Pkg.jl/issues/708#issuecomment-578149661) for an explanation.
