@@ -5,6 +5,8 @@ on:
       - main
     tags: ['*']
   pull_request:
+  schedule:
+    - cron: "0 0 * * *"
 concurrency:
   # Skip intermediate builds: always.
   # Cancel intermediate builds: only if it is a pull request build.
@@ -18,13 +20,20 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - '1.0'
-          - '1.8'
+          - '1.6'
+          - '1'
           - 'nightly'
         os:
           - ubuntu-latest
         arch:
           - x64
+        include:
+          - version: '1'
+            os: windows-latest
+            arch: x64
+          - version: '1'
+            os: macOS-latest
+            arch: x64
     steps:
       - uses: actions/checkout@v2
       - uses: julia-actions/setup-julia@v1
