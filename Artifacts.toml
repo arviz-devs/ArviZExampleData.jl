@@ -1,6 +1,6 @@
 [arviz_example_data]
-git-tree-sha1 = "1ea01419c2c0cd6cf2b2daffb235fc17091e30bc"
+git-tree-sha1 = "1a48fb48ab2b35cdeeb84e0dcdcda134e24a1c20"
 
     [[arviz_example_data.download]]
-    sha256 = "eae35685807a0dcbbf405b21eaf5fa7aff6729c5a33f8f800f093c5a8318aa2b"
-    url = "https://github.com/arviz-devs/arviz_example_data/archive/refs/tags/v0.1.0.tar.gz"
+    sha256 = "0b036ee9ae20aae544f087a490e369b844f5607552e445e08036244ad656de51"
+    url = "https://github.com/arviz-devs/arviz_example_data/archive/refs/tags/v0.1.1.tar.gz"
