@@ -30,9 +30,12 @@ julia> load_example_data("centered_eight")
 InferenceData with groups:
   > posterior
   > posterior_predictive
+  > log_likelihood
   > sample_stats
   > prior
+  > prior_predictive
   > observed_data
+  > constant_data
 ```
 """
 function load_example_data end
