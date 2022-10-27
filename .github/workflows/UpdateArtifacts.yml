@@ -1,0 +1,44 @@
+name: Update artifacts
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+  workflow_dispatch:
+jobs:
+  UpdateArtifacts:
+    runs-on: ubuntu-latest
+    name: UpdateArtifacts - ${{ matrix.artifact_name }}
+    strategy:
+      matrix:
+        include:
+          - artifact_name: arviz_example_data
+            github_repo: arviz-devs/arviz_example_data
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get latest artifact release
+        id: latestrelease
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: ${{ matrix.github_repo }}
+          excludes: prerelease, draft
+      - name: add ArtifactUtils
+        run: julia -e 'using Pkg; Pkg.add("ArtifactUtils")'
+      - name: Update Artifacts.toml
+        run: |
+          using ArtifactUtils
+          add_artifact!(
+            "Artifacts.toml",
+            "${{ matrix.artifact_name }}",
+            "https://github.com/${{ matrix.github_repo }}/archive/refs/tags/${{ steps.latestrelease.outputs.release }}.tar.gz",
+            force=true,
+          )
+        shell: julia --color=yes {0}
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          add-paths: ./Artifacts.toml
+          branch: updateartifacts/${{ matrix.artifact_name }}/${{ steps.latestrelease.outputs.release }}
+          title: 'Update ${{ matrix.artifact_name }} artifact to ${{ steps.latestrelease.outputs.release }}'
+          body: |
+            This PR updates the `Artifacts.toml` entry for `${{ matrix.artifact_name }}` to the release [`${{ steps.latestrelease.outputs.release }}`](https://github.com/${{ matrix.github_repo }}/releases/tag/${{ steps.latestrelease.outputs.release }}).
+
+            Before merging, you should check that the selected release is correct and that the tests pass.
