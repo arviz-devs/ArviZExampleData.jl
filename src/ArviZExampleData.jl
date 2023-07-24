@@ -2,8 +2,9 @@ module ArviZExampleData
 
 using Artifacts: @artifact_str
 using DataDeps: DataDeps
-using InferenceObjectsNetCDF: InferenceObjectsNetCDF
+using InferenceObjects: InferenceObjects
 using JSON3: JSON3
+using NCDatasets: NCDatasets
 using OrderedCollections: OrderedDict
 using StructTypes: StructTypes
 
