@@ -8,7 +8,7 @@ DocMeta.setdocmeta!(
 makedocs(;
     modules=[ArviZExampleData],
     authors="Seth Axen <seth.axen@gmail.com> and contributors",
-    repo="https://github.com/arviz-devs/ArviZExampleData.jl/blob/{commit}{path}#{line}",
+    repo=Remotes.GitHub("arviz-dev", "ArviZExampleData.jl"),
     sitename="ArviZExampleData.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
@@ -22,6 +22,7 @@ makedocs(;
         "API" => "api.md",
         "For developers" => "for_developers.md",
     ],
+    warnonly=:missing_docs,
 )
 
 deploydocs(; repo="github.com/arviz-devs/ArviZExampleData.jl", devbranch="main")
