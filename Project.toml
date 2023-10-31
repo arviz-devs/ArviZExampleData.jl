@@ -1,7 +1,7 @@
 name = "ArviZExampleData"
 uuid = "2f96bb34-afd9-46ae-bcd0-9b2d4372fe3c"
 authors = ["Seth Axen <seth.axen@gmail.com> and contributors"]
-version = "0.1.6"
+version = "0.1.7"
 
 [deps]
 Artifacts = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
