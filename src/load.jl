@@ -20,6 +20,7 @@ KeySet for a OrderedCollections.OrderedDict{String, ArviZExampleData.AbstractFil
   "non_centered_eight"
   "radon"
   "rugby"
+  "rugby_field"
   "regression1d"
   "regression10d"
   "classification1d"
