@@ -1,5 +1,5 @@
 """
-    describe_example_data() -> String
+    describe_example_data(name) -> String
 
 Return a string containing descriptions of all available datasets.
 
