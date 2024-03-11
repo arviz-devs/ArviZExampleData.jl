@@ -15,7 +15,7 @@ A file is downloaded only when it is requested and then cached for future use.
 
 ```jldoctest
 julia> keys(load_example_data())
-KeySet for a OrderedCollections.OrderedDict{String, ArviZExampleData.AbstractFileMetadata} with 9 entries. Keys:
+KeySet for a OrderedCollections.OrderedDict{String, ArviZExampleData.AbstractFileMetadata} with 10 entries. Keys:
   "centered_eight"
   "non_centered_eight"
   "radon"
