@@ -17,7 +17,7 @@ using Test
         ]
         datasets = load_example_data()
         @test datasets isa AbstractDict{String,ArviZExampleData.AbstractFileMetadata}
-        @test issubset(keys(datasets), names)
+        @test issubset(names, keys(datasets))
         for name in keys(datasets)
             idata = load_example_data(name)
             @test idata isa InferenceData
