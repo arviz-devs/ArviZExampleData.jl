@@ -13,7 +13,7 @@ jobs:
           - artifact_name: arviz_example_data
             github_repo: arviz-devs/arviz_example_data
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Get latest artifact release
         id: latestrelease
         uses: pozetroninc/github-action-get-latest-release@master
