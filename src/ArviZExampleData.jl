@@ -14,7 +14,6 @@ const EXAMPLE_DATA_DIR = only(readdir(artifact"arviz_example_data"; join=true))
 const LOCAL_DATA_DIR = joinpath(EXAMPLE_DATA_DIR, "data")
 const LOCAL_DATA_FILE = joinpath(EXAMPLE_DATA_DIR, "data_local.json")
 const REMOTE_DATA_FILE = joinpath(EXAMPLE_DATA_DIR, "data_remote.json")
-const DATA_HTTP_PROTOCOL = "https"
 
 include("metadata.jl")
 
