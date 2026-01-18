@@ -10,7 +10,7 @@ The eight schools model is a hierarchical model used for an analysis of the effe
 
 See Bayesian Data Analysis (Gelman et. al.) for more details.
 
-local: /home/runner/.julia/artifacts/10dfbe816ce1628f5ae460225e082e0eabbe064b/arviz_example_data-0.3.0/data/centered_eight.nc
+local: /home/runner/.julia/artifacts/cb5639396962742e4eab4a5bd561126f19b9e6e3/arviz_example_data-0.4.3/data/centered_eight.nc
 
 non_centered_eight
 ==================
@@ -21,7 +21,7 @@ The eight schools model is a hierarchical model used for an analysis of the effe
 
 See Bayesian Data Analysis (Gelman et. al.) for more details.
 
-local: /home/runner/.julia/artifacts/10dfbe816ce1628f5ae460225e082e0eabbe064b/arviz_example_data-0.3.0/data/non_centered_eight.nc
+local: /home/runner/.julia/artifacts/cb5639396962742e4eab4a5bd561126f19b9e6e3/arviz_example_data-0.4.3/data/non_centered_eight.nc
 
 radon
 =====
@@ -32,7 +32,7 @@ This example uses an EPA study of radon levels in houses in Minnesota to constru
 
 See Gelman and Hill (2006) for details on the example, or https://docs.pymc.io/notebooks/multilevel_modeling.html by Chris Fonnesbeck for details on this implementation.
 
-remote: http://ndownloader.figshare.com/files/24067472
+remote: https://ndownloader.figshare.com/files/24067472
 
 rugby
 =====
@@ -43,7 +43,7 @@ This example uses and includes results from 2014 - 2017, comprising 60 total gam
 
 See https://github.com/arviz-devs/arviz_example_data/blob/main/code/rugby/rugby.ipynb for the whole model specification.
 
-remote: http://figshare.com/ndownloader/files/44916469
+remote: https://ndownloader.figshare.com/files/44916469
 
 rugby_field
 ===========
@@ -54,43 +54,7 @@ This example uses and includes results from 2014 - 2017, comprising 60 total gam
 
 See https://github.com/arviz-devs/arviz_example_data/blob/main/code/rugby_field/rugby_field.ipynb for the whole model specification.
 
-remote: http://figshare.com/ndownloader/files/44667112
-
-regression1d
-============
-
-A synthetic one dimensional linear regression dataset with latent slope, intercept, and noise (&quot;eps&quot;). One hundred data points, fit with PyMC3.
-
-True slope and intercept are included as deterministic variables.
-
-remote: http://ndownloader.figshare.com/files/16254899
-
-regression10d
-=============
-
-A synthetic multi-dimensional (10 dimensions) linear regression dataset with latent weights (&quot;w&quot;), intercept, and noise (&quot;eps&quot;). Five hundred data points, fit with PyMC3.
-
-True weights and intercept are included as deterministic variables.
-
-remote: http://ndownloader.figshare.com/files/16255736
-
-classification1d
-================
-
-A synthetic one dimensional logistic regression dataset with latent slope and intercept, passed into a Bernoulli random variable. One hundred data points, fit with PyMC3.
-
-True slope and intercept are included as deterministic variables.
-
-remote: http://ndownloader.figshare.com/files/16256678
-
-classification10d
-=================
-
-A synthetic multi dimensional (10 dimensions) logistic regression dataset with latent weights (&quot;w&quot;) and intercept, passed into a Bernoulli random variable. Five hundred data points, fit with PyMC3.
-
-True weights and intercept are included as deterministic variables.
-
-remote: http://ndownloader.figshare.com/files/16256681
+remote: https://ndownloader.figshare.com/files/44667112
 
 glycan_torsion_angles
 =====================
@@ -99,4 +63,68 @@ Torsion angles phi and psi are critical for determining the three dimensional st
 
 This model uses a Von Mises distribution to propose torsion angles for the structure of a glycan molecule (pdb id: 2LIQ), and a Potential to estimate the proposed structure&#39;s energy. Said Potential is bound by Boltzman&#39;s law.
 
-remote: http://ndownloader.figshare.com/files/22882652</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../api/">API »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.16.1 on <span class="colophon-date" title="Sunday 18 January 2026 02:11">Sunday 18 January 2026</span>. Using Julia version 1.12.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+remote: https://ndownloader.figshare.com/files/22882652
+
+crabs_poisson
+=============
+
+Horseshoe crabs arrive at the beach in pairs for their spawning ritual. Solitary males gather around the nesting couples and vying to fertilize the eggs. These individuals, known as satellite males, often congregate near certain nesting pairs while disregarding others.
+
+We use Bambi to create a hurdle-negative binomial model for the number of male satellites as a function of the carapace width and color of the female.
+
+For details see https://doi.org/10.1111/j.1439-0310.1996.tb01099.x and https://bap.com.ar.
+
+remote: https://ndownloader.figshare.com/files/53391239
+
+crabs_hurdle_nb
+===============
+
+Horseshoe crabs arrive at the beach in pairs for their spawning ritual. Solitary males gather around the nesting couples and vying to fertilize the eggs. These individuals, known as satellite males, often congregate near certain nesting pairs while disregarding others.
+
+We use Bambi to create a hurdle-negative binomial model for the number of male satellites as a function of the carapace width and color of the female.
+
+For details see https://doi.org/10.1111/j.1439-0310.1996.tb01099.x and https://bap.com.ar.
+
+remote: https://ndownloader.figshare.com/files/53391224
+
+sbc
+===
+
+Simulated Based Calibration with the eight-school dataset and PyMC with NUTS sampler. 100 very short simulations were carried-out
+
+remote: https://ndownloader.figshare.com/files/52915271
+
+anes
+====
+
+Logistic regression model for American National Election Studies (ANES) data. The model aims to predict voter intention for Clinton based on party identification and its interaction with age.
+
+remote: https://ndownloader.figshare.com/files/53391248
+
+periwinkles
+===========
+
+31 periwinkles (a kind of sea snail) were removed from it original place and released down shore. A VonMises likelihood is used to model the direction of motion as function of the distance travelled by the periwinkles after being release.
+
+remote: https://ndownloader.figshare.com/files/53391296
+
+censored_cats
+=============
+
+Simple model of the survival curve for cat adoptions from an animal shelter in Austin, Texas. The dataset comes from the City of Austin Open Data Portal for more details of the model you can check bambi&#39;s documentation
+
+remote: https://ndownloader.figshare.com/files/58114255
+
+roaches_nb
+==========
+
+The roaches data example comes from Chapter 8.3 of of Gelman and Hill (2007).
+
+remote: https://ndownloader.figshare.com/files/59961428
+
+roaches_zinb
+============
+
+The roaches data example comes from Chapter 8.3 of of Gelman and Hill (2007).
+
+remote: https://ndownloader.figshare.com/files/59961890</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« Home</a><a class="docs-footer-nextpage" href="../api/">API »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.16.1 on <span class="colophon-date" title="Sunday 18 January 2026 22:40">Sunday 18 January 2026</span>. Using Julia version 1.12.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
