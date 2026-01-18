@@ -5,23 +5,30 @@ using Test
 @testset "data loading" begin
     @testset "load_example_data" begin
         names = [
+            "anes",
+            "censored_cats",
             "centered_eight",
-            "classification10d",
-            "classification1d",
+            "crabs_hurdle_nb",
+            "crabs_poisson",
             "glycan_torsion_angles",
             "non_centered_eight",
+            "periwinkles",
             "radon",
-            "regression10d",
-            "regression1d",
+            "roaches_nb",
+            "roaches_zinb",
             "rugby",
+            "rugby_field",
+            "sbc",
         ]
         datasets = load_example_data()
         @test datasets isa AbstractDict{String,ArviZExampleData.AbstractFileMetadata}
         @test issubset(names, keys(datasets))
-        for name in keys(datasets)
+        @testset for name in keys(datasets)
             idata = load_example_data(name)
             @test idata isa InferenceData
-            @test InferenceObjects.hasgroup(idata, :posterior)
+            if name != "sbc"
+                @test InferenceObjects.hasgroup(idata, :posterior)
+            end
         end
         @test_throws ArgumentError load_example_data("test_absent_dataset")
     end
