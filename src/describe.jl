@@ -16,7 +16,7 @@ This example uses an EPA study of radon levels in houses in Minnesota to constru
 
 See Gelman and Hill (2006) for details on the example, or https://docs.pymc.io/notebooks/multilevel_modeling.html by Chris Fonnesbeck for details on this implementation.
 
-remote: http://ndownloader.figshare.com/files/24067472
+remote: https://ndownloader.figshare.com/files/24067472
 ```
 """
 function describe_example_data end
