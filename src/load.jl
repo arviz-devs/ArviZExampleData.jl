@@ -15,17 +15,21 @@ A file is downloaded only when it is requested and then cached for future use.
 
 ```jldoctest
 julia> keys(load_example_data())
-KeySet for a OrderedCollections.OrderedDict{String, ArviZExampleData.AbstractFileMetadata} with 10 entries. Keys:
+KeySet for a OrderedCollections.OrderedDict{String, ArviZExampleData.AbstractFileMetadata} with 14 entries. Keys:
   "centered_eight"
   "non_centered_eight"
   "radon"
   "rugby"
   "rugby_field"
-  "regression1d"
-  "regression10d"
-  "classification1d"
-  "classification10d"
   "glycan_torsion_angles"
+  "crabs_poisson"
+  "crabs_hurdle_nb"
+  "sbc"
+  "anes"
+  "periwinkles"
+  "censored_cats"
+  "roaches_nb"
+  "roaches_zinb"
 
 julia> load_example_data("centered_eight")
 InferenceData with groups:
