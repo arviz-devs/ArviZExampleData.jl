@@ -34,6 +34,9 @@ jobs:
           - version: '1'
             os: macOS-latest
             arch: x64
+          - version: '1'
+            os: macOS-latest
+            arch: aarch64
     steps:
       - uses: actions/checkout@v6
       - uses: julia-actions/setup-julia@v2
@@ -41,6 +44,37 @@ jobs:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
       - uses: julia-actions/cache@v2
+      - name: Diagnose figshare access (curl)
+        if: runner.os == 'macOS'
+        run: |
+          echo "=== Runner egress IP ==="
+          curl -s https://ifconfig.me || true
+          echo ""
+          echo "=== System architecture ==="
+          uname -m
+          echo "=== Testing figshare with curl ==="
+          curl -sS -w "\nHTTP status: %{http_code}\n" -L -o /dev/null "https://ndownloader.figshare.com/files/53391239"
+      - name: Diagnose figshare access (Julia)
+        if: runner.os == 'macOS'
+        shell: julia --color=yes {0}
+        run: |
+          url = "https://ndownloader.figshare.com/files/53391239"
+          println("=== Testing Downloads.jl (libcurl) ===")
+          try
+              Downloads.download(url, tempname())
+              println("SUCCESS")
+          catch e
+              println("FAILED: ", e)
+          end
+          import Pkg; Pkg.add("HTTP")
+          using HTTP
+          println("=== Testing HTTP.jl ===")
+          try
+              HTTP.download(url, tempname())
+              println("SUCCESS")
+          catch e
+              println("FAILED: ", e)
+          end
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
       - uses: julia-actions/julia-processcoverage@v1
