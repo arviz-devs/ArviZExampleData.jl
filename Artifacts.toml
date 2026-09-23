@@ -3,4 +3,5 @@ git-tree-sha1 = "cb5639396962742e4eab4a5bd561126f19b9e6e3"
 
     [[arviz_example_data.download]]
     sha256 = "04b55abaf6398da33f52543b00f9eb39dc0f55f9278faad9f5425f856caeb2de"
+    size = 1467912
     url = "https://github.com/arviz-devs/arviz_example_data/archive/refs/tags/v0.4.3.tar.gz"
